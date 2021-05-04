@@ -1,0 +1,16 @@
+/**
+ * List Unstyled
+ * Remove default browser padding and list-style
+ *
+ * Usage:
+ * @include list-unstyled;
+ */
+
+@mixin list-unstyled {
+  list-style: none;
+  padding-left: 0;
+
+  li::before {
+    display: none;
+  }
+}

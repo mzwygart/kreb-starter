@@ -1,0 +1,11 @@
+textarea,
+input[type="text"],
+input[type="numer"],
+input[type="email"],
+input[type="tel"] {
+  @include space('p', $space-2);
+
+  background: white;
+  border: 1px solid $color-grey-10;
+  border-radius: 3px;
+}

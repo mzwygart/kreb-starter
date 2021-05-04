@@ -1,0 +1,51 @@
+/*!
+ * Project: Phobos
+ * Author: Mathieu Zwygart
+ * E-mail: mathieu@8bitstudio.ch
+ */
+
+/**
+ * This is where all of the stylesheets are compiled.
+ * They are processed in the order they are imported
+ * to ensure the consistent increase of specificity.
+ *
+ *    ITCSS Methodology: Inverted Triangle CSS
+ *
+ *    **************   1. Settings
+ *     ************    2. Tools
+ *      **********     3. Generic
+ *       ********      4. Elements
+ *        ******       5. Objects
+ *         ****        6. Components
+ *          **         7. Utilities
+ *
+ * 1. Settings.........Global configuration and variables.
+ * 2. Tools............Functions and mixins.
+ * 3. Generic..........Ground zero styles.
+ *                     (normalizing.css, box-sizing etc...)
+ * 4. Elements.........Unclassed (bare) HTML element
+ *                     (like H1, Ul, A etc...)
+ * 5. Objects..........Common non-cosmetic structural design patterns.
+ *                     e.g containers, rows, grids, colums etc...
+ * 6. Components.......Specific cosmetic elements of UI.
+ *                     e.g. buttons, forms, header, footer etc...
+ * 7. Utilities........Helpers and overrides.
+ *
+ *    Modules..........Multi-part components.
+ *                     e.g. Navbar (HTML, CSS and JS).
+ *    Shame............All the CSS, hacks and things we are not proud of.
+ */
+
+@import '1_settings/**/*.scss';
+@import '2_tools/**/*.scss';
+@import '3_generic/**/*.scss';
+/* purgecss start ignore */
+@import '4_elements/**/*.scss';
+@import '5_objects/**/*.scss';
+@import '6_components/**/*.scss';
+/* purgecss end ignore */
+@import '7_utilities/**/*.scss';
+/* purgecss start ignore */
+@import '8_modules/**/*.scss';
+/* purgecss end ignore */
+@import 'shame';

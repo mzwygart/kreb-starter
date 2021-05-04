@@ -1,0 +1,49 @@
+@mixin heading-base
+{
+  margin-top: 2em;
+  margin-bottom: .5em;
+  font-family: $font-family-headings;
+  font-weight: 600;
+  line-height: 1.2em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+@mixin h1 {
+  @include heading-base;
+  @include responsive-font-size($font-size-8, '', '', $font-size-12);
+
+  display: block;
+}
+
+@mixin h2 {
+  @include heading-base;
+  @include responsive-font-size($font-size-7, '', '', '', $font-size-11);
+
+  display: block;
+}
+
+@mixin h3 {
+  @include heading-base;
+  @include responsive-font-size($font-size-6, $font-size-10, '', '');
+
+  display: block;
+}
+
+@mixin h4 {
+  @include heading-base;
+  @include responsive-font-size($font-size-5, '', $font-size-9, '');
+
+  display: block;
+}
+
+@mixin h5 {
+}
+
+h1 { @include h1; }
+h2 { @include h2; }
+h3 { @include h3; }
+h4 { @include h4; }
+h5 { @include h5; }

@@ -1,0 +1,87 @@
+{
+	"root": {
+		"src": "./src",
+		"dest": "./web/app/themes/kreb"
+	},
+
+	"tasks": {
+		"active": ["html", "css", "js", "images", "static", "svgSprite", "getText"],
+
+		"browserSync": {
+			"proxy": "http://www.my-project.test",
+			"open": "external"
+		},
+
+		"static": {
+			"src": "static",
+			"dest": "./"
+		},
+
+		"getText": {
+			"src": "static/languages",
+			"dest": "./languages"
+		},
+
+		"js": {
+			"src": "js",
+			"dest": "js",
+			"output": "./app.js",
+			"extensions": ["js", "json"],
+			"babel": {
+				"presets": ["es2015"]
+			}
+		},
+
+		"css": {
+			"src": "css",
+			"dest": "css",
+			"autoprefixer": {
+				"browsers": ["last 3 versions"]
+			},
+			"sass": {
+				"indentedSyntax": false,
+				"includePaths": ["node_modules"]
+			},
+			"extensions": ["sass", "scss", "css"]
+		},
+
+		"html": {
+			"src": "html",
+			"dest": "./",
+			"dataFile": "data/global.json",
+			"htmlmin": {
+				"collapseWhitespace": true
+			},
+			"extensions": ["html", "pug", "json", "php"],
+			"excludeFolders": ["layouts", "shared", "macros", "data"]
+		},
+
+		"images": {
+			"src": "img",
+			"dest": "img",
+			"extensions": ["jpg", "png", "svg", "gif"]
+		},
+
+		"fonts": {
+			"src": "fonts",
+			"dest": "fonts",
+			"extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+		},
+
+		"iconFont": {
+			"src": "icons",
+			"dest": "fonts",
+			"sassDest": "lib",
+			"extensions": ["woff2", "woff", "eot", "ttf", "svg"]
+		},
+
+		"svgSprite": {
+			"src": "icons",
+			"dest": "img",
+			"extensions": ["svg"],
+			"svgStore": {
+				"inlineSvg": true
+			}
+		}
+	}
+}

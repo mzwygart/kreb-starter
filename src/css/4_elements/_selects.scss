@@ -1,0 +1,6 @@
+select {
+  @include space('p', $space-4);
+
+  background: $color-grey-03;
+  border: none;
+}

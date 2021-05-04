@@ -1,0 +1,29 @@
+/**
+* Font Size
+*/
+@mixin make-font-sizes($font-sizes) {
+  @each $name, $value in $font-sizes {
+    .font-size-#{$name} {
+      font-size: #{$value};
+    }
+  }
+}
+
+@mixin make-font-sizes-responsive($font-sizes, $grid-breakpoints) {
+  @each $breakpoint-name, $breakpoint-value in $grid-breakpoints {
+    @if ($breakpoint-value != 0) {
+      @media screen and (min-width: $breakpoint-value) {
+        @each $name, $value in $font-sizes {
+          .#{$breakpoint-name}-font-size-#{$name} {
+            font-size: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
+
+@if $use-text-colors {
+  @include make-font-sizes($font-sizes);
+  @include make-font-sizes-responsive($font-sizes, $grid-breakpoints);
+}

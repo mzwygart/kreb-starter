@@ -1,0 +1,35 @@
+/**
+ * Position
+ * Utilities for controlling an element's position.
+ * Usage
+ * .static, .relative
+ * xl-sticky
+ */
+
+$position-values : 'static', 'relative', 'fixed', 'absolute', 'sticky';
+
+@mixin make-position($values) {
+  @each $value in $values {
+    .#{$value} {
+      position: #{$value};
+    }
+  }
+}
+
+@mixin make-position-responsive($values, $grid-breakpoints) {
+  @each $breakpoint-name, $breakpoint-value in $grid-breakpoints {
+    // sm, md, lg, xl
+    @if ($breakpoint-value != 0) {
+      @media screen and (min-width: $breakpoint-value) {
+        @each $value in $values {
+          .#{$breakpoint-name}-#{$value} {
+            position: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
+
+@include make-position($position-values);
+@include make-position-responsive($position-values, $grid-breakpoints);

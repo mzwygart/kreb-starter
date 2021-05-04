@@ -1,0 +1,17 @@
+/**
+ * Aspect Ratio
+ */
+
+@if $use-aspect-ratio {
+
+  .ratio-4-3 {
+    @include aspect-ratio(4, 3);
+  }
+  .ratio-16-9 {
+    @include aspect-ratio(16, 9);
+  }
+  .ratio-5-6 {
+    @include aspect-ratio(5, 6);
+  }
+
+}

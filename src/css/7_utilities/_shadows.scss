@@ -1,0 +1,15 @@
+.box-shadow-m {
+  @include box-shadow-m;
+}
+
+.box-shadow-l {
+  @include box-shadow-l;
+}
+
+.text-shadow-m {
+  @include text-shadow-m;
+}
+
+.text-shadow-photo {
+  @include text-shadow-photo;
+}
